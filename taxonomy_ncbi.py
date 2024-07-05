@@ -11,7 +11,7 @@ import time
 # Function to fetch taxonomy information using NCBI Entrez
 def fetch_taxonomy(genus, species):
     try:
-        Entrez.email = "rosario.iacono@ufz.de"  # Replace with your email
+        Entrez.email = "my.email@address.com"  # Replace with your email
         search_term = f"{genus} {species}"
         print(f"Searching for: {search_term}")
         handle = Entrez.esearch(db="taxonomy", term=search_term, retmode="xml")
@@ -40,7 +40,7 @@ def fetch_taxonomy(genus, species):
         return { 'phylum': None, 'class': None, 'order': None, 'family': None }
 
 # Load the CSV file
-file_path = 'C:/Users/iacono/Nextcloud/Cloud/Data analyses/AMF_Time_series_2011_2023/tables/species.csv'  # Replace with your file path
+file_path = 'path_to_my_file.csv'  # Replace with your file path
 species_df = pd.read_csv(file_path, header=None, names=['Species'])
 
 # Split the species column into Genus and Species
@@ -70,5 +70,5 @@ for index, row in species_df.iterrows():
 taxonomy_df = pd.DataFrame(taxonomy_info)
 
 # Save the taxonomy table to a new CSV file
-taxonomy_df.to_csv('C:/Users/iacono/Nextcloud/Cloud/Data analyses/AMF_Time_series_2011_2023/tables/taxonomy_table.csv', index=False)
+taxonomy_df.to_csv('path_to_my_file.csv', index=False)
 
