@@ -1,8 +1,5 @@
-# -*- coding: utf-8 -*-
 """
-Spyder Editor
-
-This is a temporary script file.
+A script to mine a taxonomy from NCBI given a list of species in the format genus_species
 """
 import pandas as pd
 from Bio import Entrez
